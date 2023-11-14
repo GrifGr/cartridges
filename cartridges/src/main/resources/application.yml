@@ -1,0 +1,38 @@
+spring:
+    application:
+        name: cartridges
+    data:
+        web:
+            pageable:
+                default-page-size: 10
+                one-indexed-parameters: true
+    datasource:
+        url: jdbc:postgresql://127.0.0.1:5432/cartridge
+        driver-class-name: org.postgresql.Driver
+        username: postgres
+        password: qwerty
+    error:
+        whitelabel:
+            enabled: true
+    jackson:
+        serialization:
+            WRITE_DATES_AS_TIMESTAMPS: false
+    jpa:
+        defer-datasource-initialization: true
+        open-in-view: false
+        show-sql: true
+    messages:
+        basename: messages
+        fallback-to-system-locale: false
+    mvc:
+        format:
+            date-time: iso
+        hiddenmethod:
+            filter:
+                enabled: true
+    sql:
+        init:
+            mode: always
+            continue-on-error: false
+    thymeleaf:
+        prefix: /WEB-INF/html/
