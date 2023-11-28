@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import grifgr.cartridges.domain.Cartridges;
+import grifgr.cartridges.domain.Cartridge;
 import grifgr.cartridges.service.CartridgesService;
 
 @Controller
@@ -29,7 +29,7 @@ public class CartridgesController {
     public String getAll(Model model, Pageable pageable) {
 //        log.debug("Open page with all lessons");
 
-        Page<Cartridges> cartridges = cartridgesService.getAll(pageable);
+        Page<Cartridge> cartridges = cartridgesService.getAll(pageable);
         model.addAttribute("cartridges", cartridges);
         return PATH + "list_cartridges";
     }

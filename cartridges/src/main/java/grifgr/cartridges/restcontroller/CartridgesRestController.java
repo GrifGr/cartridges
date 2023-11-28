@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import grifgr.cartridges.domain.Cartridges;
+import grifgr.cartridges.domain.Cartridge;
 import grifgr.cartridges.filter.CartridgesFilter;
 import grifgr.cartridges.service.CartridgesService;
 
@@ -22,7 +22,7 @@ public class CartridgesRestController {
 	}
 	
 	@GetMapping
-	public Page<Cartridges> getAll(@PageableDefault Pageable pageable, CartridgesFilter cartridgesFilter){
+	public Page<Cartridge> getAll(@PageableDefault Pageable pageable, CartridgesFilter cartridgesFilter){
 		return cartridgesService.getAll(pageable, cartridgesFilter);		
 	}
 	

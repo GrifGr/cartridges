@@ -2,11 +2,27 @@ package grifgr.cartridges.domain;
 
 import java.time.LocalDate;
 
-public class Cartridges {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "cartridges")
+public class Cartridge {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private int number;
+	
+    @ManyToOne
+    @JoinColumn(name = "model_id", referencedColumnName = "id")
 	private ModelCartridge model;
+    
 	private LocalDate dateGiveToUser;
 	private LocalDate dateGetFromUser;
 	private LocalDate dateGetFromService;
