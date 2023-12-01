@@ -25,6 +25,13 @@ public class CartridgesController {
 		this.cartridgesService = cartridgesService;
 	}
 	
+    @RequestMapping("/")
+    public String getIndex() {
+//        log.debug("Open page index");
+
+        return "index";
+    }
+    
     @GetMapping("/list")
     public String getAll(Model model, Pageable pageable) {
 //        log.debug("Open page with all lessons");
